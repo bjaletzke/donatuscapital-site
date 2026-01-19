@@ -1,66 +1,143 @@
-// src/App.tsx
-
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import cloudflareLogo from "./assets/Cloudflare_Logo.svg";
-import honoLogo from "./assets/hono.svg";
-import "./App.css";
-
 function App() {
-	const [count, setCount] = useState(0);
-	const [name, setName] = useState("unknown");
+  return (
+    <div className="min-h-screen bg-[#F5F5F3] dark:bg-[#181b19] text-[#181b19] dark:text-[#F5F5F3]">
+      {/* Hero Section with Train/Red Rocks Image */}
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/jony-y-7IR2CV2zlWo-unsplash.jpg')" }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#181b19]/80 via-[#181b19]/70 to-[#181b19]/90 dark:from-[#181b19]/85 dark:via-[#181b19]/75 dark:to-[#181b19]/95"></div>
 
-	return (
-		<>
-			<div>
-				<a href="https://vite.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-				<a href="https://hono.dev/" target="_blank">
-					<img src={honoLogo} className="logo cloudflare" alt="Hono logo" />
-				</a>
-				<a href="https://workers.cloudflare.com/" target="_blank">
-					<img
-						src={cloudflareLogo}
-						className="logo cloudflare"
-						alt="Cloudflare logo"
-					/>
-				</a>
-			</div>
-			<h1>Vite + React + Hono + Cloudflare</h1>
-			<div className="card">
-				<button
-					onClick={() => setCount((count) => count + 1)}
-					aria-label="increment"
-				>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<div className="card">
-				<button
-					onClick={() => {
-						fetch("/api/")
-							.then((res) => res.json() as Promise<{ name: string }>)
-							.then((data) => setName(data.name));
-					}}
-					aria-label="get name"
-				>
-					Name from API is: {name}
-				</button>
-				<p>
-					Edit <code>worker/index.ts</code> to change the name
-				</p>
-			</div>
-			<p className="read-the-docs">Click on the logos to learn more</p>
-		</>
-	);
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full">
+          <div className="flex flex-col items-center justify-center">
+            <img
+              src="/DC_clean.svg"
+              alt="Donatus Capital"
+              className="w-full max-w-xl lg:max-w-2xl mx-auto mb-12 drop-shadow-2xl"
+            />
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-wide text-[#F5F5F3] mb-6 leading-tight">
+              Strategic Investments.
+            </h1>
+            <p className="text-lg md:text-xl lg:text-2xl font-light text-[#F5F5F3]/90 tracking-wide max-w-3xl mx-auto">
+              Navigating global markets to deliver exceptional returns.
+            </p>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="w-6 h-10 border-2 border-[#F5F5F3]/50 rounded-full flex justify-center pt-2">
+            <div className="w-1.5 h-3 bg-[#F5F5F3]/70 rounded-full animate-bounce"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Approach Section */}
+      <section className="py-24 md:py-32 px-6 bg-[#F5F5F3] dark:bg-[#181b19]">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-sm md:text-base font-normal tracking-[0.2em] uppercase mb-8 opacity-70">
+            Our Approach
+          </h2>
+          <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed opacity-90">
+            Donatus Capital is a London-based investment fund focused on
+            delivering sustainable long-term returns through strategic capital
+            allocation and active portfolio management.
+          </p>
+        </div>
+      </section>
+
+      {/* Vision Section with Cliff Image */}
+      <section
+        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/roberto-shumski-iA2Z1U98svg-unsplash.jpg')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#181b19]/90 via-[#181b19]/70 to-[#181b19]/60 dark:from-[#181b19]/95 dark:via-[#181b19]/80 dark:to-[#181b19]/70"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
+          <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
+            <div className="text-[#F5F5F3]">
+              <h3 className="text-sm md:text-base font-normal tracking-[0.2em] uppercase mb-6 opacity-90">
+                Investment Philosophy
+              </h3>
+              <p className="text-xl md:text-2xl lg:text-3xl font-light leading-relaxed">
+                Our approach combines rigorous fundamental analysis with a deep
+                understanding of market dynamics to identify compelling
+                investment opportunities across global markets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Box - Bridging the Two Sections */}
+      <div className="relative z-20 -mt-32 mb-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="backdrop-blur-md bg-[#F5F5F3]/90 dark:bg-[#181b19]/90 border-2 border-[#181b19]/20 dark:border-[#F5F5F3]/20 rounded-none p-12 md:p-16 shadow-2xl">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light italic leading-relaxed text-center">
+              Rigorous fundamental analysis combined with deep market insights
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Discovery Section with Cave/Ocean Image */}
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/venti-views-_JwjoWbXt7c-unsplash.jpg')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#181b19]/95 via-[#181b19]/60 to-[#181b19]/80 dark:from-[#181b19]/98 dark:via-[#181b19]/70 dark:to-[#181b19]/85"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 text-[#F5F5F3]">
+            <div className="text-center">
+              <h4 className="text-sm font-normal tracking-[0.2em] uppercase mb-4 opacity-90">
+                The Journey
+              </h4>
+              <p className="text-lg font-light leading-relaxed opacity-95">
+                Every investment begins with a journey of discovery, moving
+                forward with purpose and determination.
+              </p>
+            </div>
+            <div className="text-center">
+              <h4 className="text-sm font-normal tracking-[0.2em] uppercase mb-4 opacity-90">
+                The Vision
+              </h4>
+              <p className="text-lg font-light leading-relaxed opacity-95">
+                We seek elevated perspectives to identify opportunities others
+                may overlook in the vast landscape.
+              </p>
+            </div>
+            <div className="text-center">
+              <h4 className="text-sm font-normal tracking-[0.2em] uppercase mb-4 opacity-90">
+                The Discovery
+              </h4>
+              <p className="text-lg font-light leading-relaxed opacity-95">
+                Through careful analysis, we uncover pathways to sustainable
+                value and long-term growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 text-center bg-[#F5F5F3] dark:bg-[#181b19] border-t border-[#181b19]/10 dark:border-[#F5F5F3]/10">
+        <p className="text-sm tracking-wider opacity-50">
+          Donatus Capital | London
+        </p>
+        <p className="text-sm tracking-wider opacity-50">Don't contact us.</p>
+      </footer>
+    </div>
+  );
 }
 
 export default App;
